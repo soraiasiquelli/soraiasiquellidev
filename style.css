@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap'); /*Fonte Para Titulo*/
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap'); /*Fonte para ul li*/
+
+
+
+*{
+    padding: 0px;
+    margin: 0%
+}
+main{
+    background: linear-gradient(to right, #5334ae, #1770b3);
+    color: white;
+    height: 100vh;
+}
+
+header{
+    display: flex;
+    height: 10vh;
+}
+header {
+    display: flex;
+    justify-content: space-between; /* Garante espaço entre logo e menu */
+    padding: 20px;
+}
+
+header ul {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto; /* Move a UL para a direita */
+    padding: 20px;
+    font-size: 18px;
+    font-family: "Questrial", sans-serif;
+
+
+}
+
+header ul li {
+    display: inline-block;
+    margin-left: 20px; /* Espaçamento entre itens */
+}
+header > span{
+    font-size: 40px;
+    padding: 15px;
+    margin-left: 40px;
+    font-family: "League Spartan", sans-serif;
+
+}
+
+.secao_principal{
+    width: 80%;
+    height: auto;
+    margin: auto;
+    margin-top: 5%;
+    padding: 2%;
+    display: flex;
+}
+#secao_apresentacao, #secao_imagem_principal{
+    width: 50%;
+}
+
+h1{
+    font-size: 40px;
+    font-family: "League Spartan", sans-serif;
+
+}
+
+h2{
+    font-size: 30px;
+    font-family: "League Spartan", sans-serif;
+
+}
+h3{
+    font-size: 24px;
+    font-family: "League Spartan", sans-serif;
+
+}
+
+h1, h2, h3{
+    padding: 5px;
+}
+
+#secao_cards_apresentacao {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 80%;
+    padding: 10px;
+    margin-top: 2%;
+
+}
+
+.card_apresentacao {
+    width: 100px;
+    height:auto;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+.card_apresentacao:hover {
+    transform: scale(1.2);
+    
+}
+.icone_cursor{
+    width: 35%;
+    float: right;
+
+}
+.card_apresentacao > p{
+    margin-top: 35%;
+    font-size: 14px;
+    font-family: "Questrial", sans-serif;
+
+}
+
+#secao_imagem_principal {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+#secao_imagem_principal > img {
+    width: 60%;
+    border-radius: 50%;
+}
+/*SECAO SOBRE MIM*/
+
+#secao_sobre_mim{
+    display: flex;
+    width: 80%;
+    height: 100vh;
+    margin: auto;
+    margin-top: 2%;
+}
+#secao_imagem, .secao_texto{
+    width: 50%;
+    padding: 20px;
+    color: black;
+
+}
+#secao_imagem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#secao_imagem > img{
+    width: 60%;
+}
+.secao_sobre_mim > h2{
+    padding: 20px;
+    float: right;
+
+}.linha_do_tempo {
+    position: relative;
+    width: 80%;
+    margin: 50px auto;
+    padding: 10px 0;
+    color: black;
+    font-family: Arial, sans-serif; /* Adiciona uma fonte limpa */
+    margin-top: 50%;
+}
+
+.ponto {
+    position: absolute;
+    top: 0;
+    width: 25px;
+    height: 25px;
+    background-color: #3498db; /* Cor do ponto */
+    border-radius: 50%; /* Faz o ponto ser circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    transition: transform 0.3s ease; /* Animação suave ao passar o mouse */
+}
+
+.ponto:hover {
+    transform: scale(1.2); /* Aumenta o ponto ao passar o mouse */
+}
+
+.ponto-content {
+    display: inline-block;
+    padding-top: 50px; /* Ajusta a distância do conteúdo abaixo do ponto */
+    color: black;
+    text-align: center;
+    width: 200px;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-top: 10px;
+    background-color: #fff; /* Adiciona fundo branco para destaque */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar o conteúdo */
+    font-family: "Questrial", sans-serif;
+
+}
+
+.linha_do_tempo:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background-color: #3498db; /* Cor da linha */
+    transform: translateY(-50%);
+}
+
+.ponto:nth-child(1) {
+    left: 10%;
+}
+
+.ponto:nth-child(2) {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.ponto:nth-child(3) {
+    right: 10%;
+}
