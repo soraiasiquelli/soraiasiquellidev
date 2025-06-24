@@ -1,14 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap'); /*Fonte Para Titulo*/
 @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap'); /*Fonte para ul li*/
 
-
+:root{
+    /*Roxo claro*/
+    --roxo_claro: #5334ae;
+    --azul_claro: #1770b3;
+}
 
 *{
     padding: 0px;
     margin: 0%
 }
 main{
-    background: linear-gradient(to right, #5334ae, #1770b3);
+   /* background: linear-gradient(to right, #5334ae, #1770b3);*/
+   background: linear-gradient(180deg,rgba(83, 52, 174, 1) 17%, rgba(23, 112, 179, 1) 61%);
+
+
     color: white;
     height: 100vh;
 }
@@ -26,23 +33,38 @@ header {
 header ul {
     display: flex;
     flex-direction: row;
-    margin-left: auto; /* Move a UL para a direita */
+    /*margin-left: auto; /* Move a UL para a direita */
+    text-align: center;
     padding: 20px;
     font-size: 18px;
     font-family: "Questrial", sans-serif;
+    margin: auto;
+    
 
 
 }
 
 header ul li {
     display: inline-block;
-    margin-left: 20px; /* Espaçamento entre itens */
+    margin-right: 150px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: underline;
 }
+
+header ul li:hover{
+    font-size: 20px;
+}
+
 header > span{
     font-size: 40px;
     padding: 15px;
-    margin-left: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5%;
     font-family: "League Spartan", sans-serif;
+    font-weight: bold;
 
 }
 
@@ -52,26 +74,62 @@ header > span{
     margin: auto;
     margin-top: 5%;
     padding: 2%;
-    display: flex;
+    display: flex
 }
 #secao_apresentacao, #secao_imagem_principal{
     width: 50%;
 }
-
+@keyframes fadeIn {
+    to{
+        opacity: 1;
+    }
+}
 h1{
-    font-size: 40px;
+    font-size: 60px;
     font-family: "League Spartan", sans-serif;
+    /*forwards serve para não voltar ao estado inicia,l, ou seja, nesse caso o opacity 0*/
+    /*animation: fadeIn 2s ease-in-out forwards;*/
+    border-right: 1px solid black;
+    animation: typing 4s steps(35, end) forwards, blink 0.7s step-end infinite;
+    overflow: hidden;
+    width: 0;
+    white-space: nowrap;         /* Impede quebra de linha */
+
+
 
 }
+@keyframes typing {
+    from { width: 0 }
+    to { 
+        width: 30ch;
+        border: none;
+    } /* Ajuste o número de caracteres */
+  }
 
+  @keyframes blink{
+    50% {
+        border-color: transparent;
+    }
+  }
 h2{
     font-size: 30px;
     font-family: "League Spartan", sans-serif;
+    animation: fadeIn 2s ease-in-out forwards;
+    opacity: 0;
+    animation-delay: 1s;
+
+
 
 }
 h3{
     font-size: 24px;
     font-family: "League Spartan", sans-serif;
+    animation: fadeIn 2s ease-in-out forwards;
+    opacity: 0;
+    animation-delay: 1s;
+
+
+
 
 }
 
@@ -120,11 +178,63 @@ h1, h2, h3{
 }
 
 #secao_imagem_principal > img {
-    width: 60%;
-    border-radius: 50%;
+    width: 70%;
+    margin-top: -10%;
 }
 /*SECAO SOBRE MIM*/
 
+#sobre_mim{
+    width: 80%;
+    height: 100vh;
+    margin: auto;
+    margin-top: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+#sobre_mim>header>h2{
+    font-size: 50px;
+}
+#secao_resumo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; /* espaço entre as colunas */
+    width: 80%;
+    height: 60%;
+    justify-content: space-between;
+    background: #5334AE;
+    background: linear-gradient(355deg, rgba(83, 52, 174, 1) 21%, rgba(20, 107, 227, 1) 56%);
+    border-radius: 20px;
+
+}
+.col_sobre{
+    flex: 1;
+    height: 80%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.bloco_sobre {
+    width: 90%;
+    height: 45%;
+    padding: 2%;
+    color: white;
+    border-bottom: 2px solid #ad6be3;
+    border-left: 2px solid #ad6be3;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+.bloco_sobre > h3{
+    padding: 5px;
+    font-size: 18px;
+}
+.bloco_sobre > p{
+    padding: 5px;
+}
 #secao_sobre_mim{
     display: flex;
     width: 80%;
@@ -219,4 +329,175 @@ h1, h2, h3{
 
 .ponto:nth-child(3) {
     right: 10%;
+}
+
+#secao_skills {
+    height: 100vh;
+    background: linear-gradient(to right, #5334ae, #1770b3);
+    display: flex;
+    flex-direction: row; /* muda de coluna para linha */
+    justify-content: center;
+    align-items: center;
+    gap: 2rem; /* espaçamento entre os elementos */
+}
+
+#skills {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; /* espaço entre as colunas */
+    width: 35%;
+    height: 80%;
+    justify-content: space-between;
+}
+
+.col_skill {
+    flex: 1;
+    height: auto;
+    padding: 20px;
+}
+.skill{
+    border: 1px solid black;
+    height: 120px;
+    border-radius: 10px;
+    background-color: white;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img_skills {
+    width: 40%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icone_skill {
+  font-size: 80px;
+  color: #74C0FC;
+}
+
+.icone_skill:hover {
+    font-size: 80px;
+    color:#ad6be3;
+
+
+  }
+.skill:hover{
+    border: 1px solid #5334ae;
+}
+
+.img_skills > img{
+    width: 70%
+
+}
+#tecnologias {
+    padding: 60px 20px;
+    background: linear-gradient(to right, #f8fbff, #eaf3ff);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  #tecnologias h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: #003366;
+    position: relative;
+  }
+  
+  .descricao-tecnologias {
+    max-width: 800px;
+    margin: 0 auto;
+    border-left: 4px solid #007acc;
+    padding-left: 20px;
+  }
+  
+  .descricao-tecnologias ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .descricao-tecnologias li {
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+    color: #333;
+    line-height: 1.6;
+    position: relative;
+  }
+  
+  .descricao-tecnologias li span {
+    font-weight: bold;
+    color: #007acc;
+  }
+  
+  
+/*Cores pro hover das skills*/
+
+/*#skills > .col_skill > .skill > .icone_skill:nth-child(1):hover{
+    
+    color:#ad6be3;
+}*/
+/*Secao projetos*/
+
+#secao_projetosdesenvolvidos{
+    height: 100vh;
+    display: flex;
+    flex-direction: row; /* muda de coluna para linha */
+    justify-content: center;
+    align-items: center;
+    gap: 2rem; /* espaçamento entre os elementos */
+}
+#projetos{
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    width: 40%;
+    height: 95%;
+
+}
+.col_projeto{
+    flex: 1;
+    width:250px;
+}
+.card_projeto{
+  
+    border-radius: 20px;
+    margin-top: 8%;
+    height: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* muda de coluna para linha */
+}
+#mockup_celular{
+    width: 70%;
+    margin-bottom: 30px;
+}
+.card_projeto > img{
+    width: 80%;
+}
+.card_projeto > label{
+    text-align: center;
+    font-weight: bold;
+    font-family: "Questrial", sans-serif;
+    padding: 4%;
+    background-color: black;
+    color: white;
+    width: 80%;
+    font-size: 14px;
+    border-radius: 20px;
+   background: linear-gradient(to right, #5334ae, #1770b3);
+
+}
+.card_projeto > label:hover{
+    scale: 1.1;
+}
+#text_projetos{
+    width: 40%;
+    border: 1px solid black;
+    height: 80%;
+
+
 }
