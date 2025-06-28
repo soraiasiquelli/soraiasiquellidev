@@ -7,19 +7,33 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="shortcut icon" href="favicon/programacao.png" type="image/x-icon">
+    <link rel="stylesheet" href="responsivo.css">
 
 </head>
 <body>
     <main>
-        <header>
+      <header>
             <span>&lt;S.S/&gt;</span>
+
             <ul>
                 <li>Sobre mim</li>
                 <li>Skills</li>
                 <li>Projetos</li>
                 <li>Contate-me</li>
             </ul>
-        </header>
+
+            <span>
+                <ul class="icones_redes_sociais">
+                <a href="https://www.linkedin.com/in/soraia-siquelli/" target="_blank">
+                    <li><i class="fa-brands fa-linkedin icone_header"></i></li>
+                </a>
+                <a href="https://www.linkedin.com/in/soraia-siquelli/" target="_blank">
+                    <li><i class="fa-brands fa-github icone_header"></i></li>
+                </a>
+                </ul>
+            </span>
+</header>
+
 
         <section class="secao_principal">
 
@@ -100,34 +114,35 @@
     </section> -->
 
 
-    <section id="sobre_mim">
-        <header>
-            <h2>Um pouco sobre mim</h2>
-        </header>
-        <div id="secao_resumo">
-            <div class="col_sobre">
-                <div class="bloco_sobre">
-                    <h3>Santander</h3>
-                    <p>Estágiaria do Santander desde Setembro/2024. Atuo com PowerPlataform, Excel, SQL e Python</p>
-                    <p>Desenvolvi uma plataforma para o time comercial e interno para centralizar as solicitações que recebemos diariamente.     </p>
+    <section class="secoes_pretas">
+        <section id="sobre_mim" >
+            <header>
+                <h2>Um pouco sobre mim</h2>
+            </header>
+            <div id="secao_resumo">
+                <div class="col_sobre">
+                    <div class="bloco_sobre">
+                        <h3>Santander</h3>
+                        <p>Estágiaria do Santander desde Setembro/2024. Atuo com PowerPlataform, Excel, SQL e Python</p>
+                        <p>Desenvolvi uma plataforma para o time comercial e interno para centralizar as solicitações que recebemos diariamente.     </p>
+                    </div>
+                    <div class="bloco_sobre">
+                        <h3>Estudante do 4ºSemestre de Ciência da Computação - USCS</h3>
+                        <p>Atualmente, estou cursando o 4º Semestre de Ciência da Computação na USCS, minhas matérias favoritas são Desenvolvimento Front-End, Banco De Dados, Programação Orientada a Objetos e Engenharia de Software. </p>
+                    </div>
                 </div>
-                <div class="bloco_sobre">
-                    <h3>Estudante do 4ºSemestre de Ciência da Computação - USCS</h3>
-                    <p>Atualmente, estou cursando o 4º Semestre de Ciência da Computação na USCS, minhas matérias favoritas são Desenvolvimento Front-End, Banco De Dados, Programação Orientada a Objetos e Engenharia de Software. </p>
-
+                <div class="col_sobre">
+                    <div class="bloco_sobre">
+                        <h3>SENAI</h3>
+                        <p>Sou formada no curso técnico de Desenvolvimento de Sistemas pelo SENAI, lá tive uma boa base de Front-End, banco de dados e comunicação, a partir dai escolhi Ciência da Computação como curso de graduação.  </p>
+                    </div>
+                    <div class="bloco_sobre">
+                        <h3>UX4YOU</h3>
+                        <p>Trabalhei por 1 ano na empresa UX4YOU de forma remota na área de Desenvolvimento de Sites e otimização para SEO, utilizei tecnologias como WordPress, HTML e a plataforma Canva, além de trabalhar com edição de alguns vídeos.</p>
+                    </div>
                 </div>
             </div>
-            <div class="col_sobre">
-                <div class="bloco_sobre">
-                    <h3>SENAI</h3>
-                    <p>Sou formada no curso técnico de Desenvolvimento de Sistemas pelo SENAI, lá tive uma boa base de Front-End, banco de dados e comunicação, a partir dai escolhi Ciência da Computação como curso de graduação.  </p>
-                </div>
-                <div class="bloco_sobre">
-                    <h3>UX4YOU</h3>
-                    <p>Trabalhei por 1 ano na empresa UX4YOU de forma remota na área de Desenvolvimento de Sites e otimização para SEO, utilizei tecnologias como WordPress, HTML e a plataforma Canva, além de trabalhar com edição de alguns vídeos.</p>
-                </div>
-            </div>
-        </div>
+        </section>
     </section>
 
 
@@ -185,7 +200,7 @@
     </section>
 
 
-    <section id="secao_projetosdesenvolvidos">
+    <!--<section id="secao_projetosdesenvolvidos">
 
         <section id="projetos">
 
@@ -222,7 +237,101 @@
         </section>
 
 
-    </section>
+    </section>-->
     
+
+    <section id="secao_projetosdesenvolvidos" class="secoes_pretas">
+            <div class="lines">
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+</div>
+
+        <section id="projetos">
+
+            <div class="col_projeto">
+                <div class="card_projeto">
+                    <img src="mockups/mockup_projeto_sistemadeagendamento-removebg-preview.png" alt="" id="imagemProjetoTimeBooker">
+                    <label for="">Time Booker</label>
+
+                    <button class="btnVerMais" data-descricao="Sistema completo de agendamento online para salões de beleza, serviços de conserto, estúdios de tatuagem e piercing, com interface intuitiva e gerenciamento fácil de horários.">
+                          <i class="fa-solid fa-arrow-right"></i>
+
+
+                     </button>
+                </div>
+            </div>
+             <div class="col_projeto">
+                <div class="card_projeto">
+                    <img src="mockups/mockup_sitecasamento-Photoroom.png" alt="" >
+                    <label for="">Landing Page - Amor em Foco</label>
+
+                     <button class="btnVerMais" data-descricao="Landing page elegante para studio de noivas, destacando vestidos, ternos e parcerias com floriculturas para eventos especiais">
+                          <i class="fa-solid fa-arrow-right"></i>
+
+
+                     </button>
+
+                </div>
+            </div>
+             <div class="col_projeto">
+                <div class="card_projeto">
+                    <img src="mockups/mockup_osav-Photoroom.png" alt="">
+                 <label for="">Projeto Acadêmico - OSAV</label>
+                  
+                     <button class="btnVerMais" data-descricao="Projeto acadêmico que simula uma empresa de tecnologia, com site institucional voltado à oferta de soluções digitais em desenvolvimento de software, consultoria e inovação web.">
+                          <i class="fa-solid fa-arrow-right"></i>
+                     </button>
+
+                </div>
+            </div>
+             <div class="col_projeto">
+                <div class="card_projeto">
+                    <img src="mockups/mockup_speedorder-Photoroom.png" alt="" id="mockup_celular">
+                   <label for="">Web App - Speed Order</label>
+                    <button class="btnVerMais" data-descricao="Speed Order é uma solução que permite aos clientes fazer pedidos direto da mesa, enviando em tempo real para a cozinha, otimizando o atendimento e reduzindo o tempo de espera">
+                          <i class="fa-solid fa-arrow-right"></i>
+                     </button>
+
+                </div>
+            </div>
+
+
+
+
+        </section>
+
+
+    </section>
+
+
+    <footer class="footer">
+  <h4>Soraia Gonçalves Siquelli</h4>
+  <p class="footer-text">Obrigada por visitar meu portfólio 💜<br>Vamos nos conectar? 🚀</p>
+  
+  <ul class="icones_redes_sociais">
+    <li>
+      <a href="https://github.com/soraiasiquelli" target="_blank" aria-label="GitHub">
+        <i class="fa-brands fa-github icone_footer"></i>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.linkedin.com/in/soraia-siquelli/" target="_blank" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin icone_footer"></i>
+      </a>
+    </li>
+  </ul>
+
+</footer>
+
+
+    <script src="script.js" defer></script>
 </body>
 </html>
