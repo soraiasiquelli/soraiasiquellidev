@@ -8,46 +8,45 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="shortcut icon" href="favicon/programacao.png" type="image/x-icon">
     <link rel="stylesheet" href="responsivo.css">
+    
 
 </head>
 <body>
+
+  <script
+  src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js"
+  type="module"
+></script>
+
     <main>
-      <header>
-            <span>&lt;S.S/&gt;</span>
+    <header>
+    <div class="header-esquerda">
+        <span>Soraia Siquelli</span>
+    </div>
 
-            <ul>
-                <a href="#sobre_mim">
-                    <li >Sobre mim</li>
-                </a>
-                <a href="#skills">
-                    <li>Skills</li>
-                </a>
-                <a href="#secao_projetosdesenvolvidos">
-                    <li>Projetos</li>
-                </a>
-                <a href="#rodape_contato">
-                    <li>Contate-me</li>
-                </a>
-            </ul>
+    <ul class="menu-centro">
+        <li><a href="#sobre_mim">Sobre mim</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#secao_projetosdesenvolvidos">Projetos</a></li>
+        <li><a href="#rodape_contato">Contate-me</a></li>
+    </ul>
 
-            <span>
-                <ul class="icones_redes_sociais">
-                <a href="https://www.linkedin.com/in/soraia-siquelli/" target="_blank">
-                    <li><i class="fa-brands fa-linkedin icone_header"></i></li>
-                </a>
-                <a href="https://www.linkedin.com/in/soraia-siquelli/" target="_blank">
-                    <li><i class="fa-brands fa-github icone_header"></i></li>
-                </a>
-                </ul>
-            </span>
-</header>
+    <div class="header-direita">
+        <!--<ul class="icones_redes_sociais">
+        <li><a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin icone_social"></i></a></li>
+        <li><a href="https://github.com" target="_blank"><i class="fa-brands fa-github icone_social"></i></a></li>
+        </ul>-->
+    </div>
+    </header>
+
+
 
 
         <section class="secao_principal">
 
             <div id="secao_apresentacao">
                 <h1>Me chamo Soraia Siquelli</h1>
-                <h2>Sou Dev. Full Stack</h2>
+                <h2>Desenvolvedora Full Stack</h2>
                 <h3>Seja Bem Vindo ao meu Portfólio</h3>
 
 
@@ -71,7 +70,14 @@
 
 
             <div id="secao_imagem_principal">
-                <img src="images/avatar_soraiasiquelli.png" alt="imagem_principal">
+               <!-- <img src="images/avatar_soraiasiquelli.png" alt="imagem_principal">-->
+               <dotlottie-wc
+                    src="https://lottie.host/4760716b-4f0c-4d06-a8df-a105ed8379b9/RQRnW3ha3K.lottie"
+                    speed="1"
+                    autoplay
+                    loop
+                    class="animacao_lottie"
+                ></dotlottie-wc>
             </div>
 
           
@@ -248,7 +254,7 @@
     </section>-->
     
 
-    <section id="secao_projetosdesenvolvidos" class="secoes_pretas">
+   <!-- <section id="secao_projetosdesenvolvidos" class="secoes_pretas">
             
 
         <section id="projetos">
@@ -306,7 +312,70 @@
         </section>
 
 
+    </section> -->
+
+    <section class="projetos_desenvolvidos">
+        <section id="cards_projetos">
+                <div class="projeto">
+                    <img src="images/timebooker.png" alt="" id="imagemProjetoTimeBooker">
+                    <label for="">Time Booker -  Sistema de Agendamento </label>
+                    <div class="skills_utilizadas">
+                        <div class="skill_usada"><i class="fa-brands fa-wordpress icone_skill_usada"></i></div>
+                        <div class="skill_usada"></div>
+                        <div class="skill_usada"></div>
+                        <div class="skill_usada"></div>
+                        <div class="skill_usada"></div>
+                    </div>
+                </div>
+                <div class="projeto">
+                    <img src="images/amor_em_foco.png" alt="" id="imagemProjetoTimeBooker">
+                    <label for="">Amor em Foco - Landing Page para Studios </label>
+                    <div class="skills_utilizadas">
+                        <div class="skill_usada"><i class="fa-brands fa-wordpress icone_skill_usada"></i></div>
+                        <div class="skill_usada"></div>
+                        <div class="skill_usada"></div>
+                        <div class="skill_usada"></div>
+                        <div class="skill_usada"></div>
+                    </div>
+                </div>
+                <div class="projeto">
+                    <img src="images/osav.png" alt="" id="imagemProjetoTimeBooker">
+                    <label for="">OSAV - Projeto Acadêmico</label>
+                    <div class="skills_utilizadas">
+                        <div class="skill_usada"><i class="fa-brands fa-html5 icone_skill_usada" ></i></div>
+                        <div class="skill_usada"><i class="fa-brands fa-js  icone_skill_usada"></i></div>
+                        <div class="skill_usada"><i class="fa-brands fa-css3-alt icone_skill_usada"></i></div>
+                        <div class="skill_usada"><i class="fa-solid fa-database icone_skill_usada"></i></div>
+                        <div class="skill_usada"></div>
+                    </div>
+                </div>
+                <div class="projeto">
+                      <img src="images/dev_tasks.jpg" alt="" id="imagemProjetoTimeBooker">
+                    <label for="">DevTasks - Controle de Projetos </label>
+                    <div class="skills_utilizadas">
+                        <div class="skill_usada"><i class="fa-brands fa-react icone_skill_usada"></i></div>
+                        <div class="skill_usada"><i class="fa-brands fa-js  icone_skill_usada"></i></div>
+                        <div class="skill_usada"><i class="fa-brands fa-css3-alt icone_skill_usada"></i></div>
+                        <div class="skill_usada"><i class="fa-solid fa-database icone_skill_usada"></i></div>
+                        <div class="skill_usada"></div>
+                    </div>
+                </div>
+                <div class="projeto">
+                    <img src="images/social_links.png" alt="" id="imagemProjetoTimeBooker">
+                    <label for="">Social Links - (Maninupalação de DOM) </label>
+                    <div class="skills_utilizadas">
+                        <div class="skill_usada"><i class="fa-brands fa-html5 icone_skill_usada"></i></div>
+                        <div class="skill_usada"><i class="fa-brands fa-js  icone_skill_usada"></i></div>
+                        <div class="skill_usada"><i class="fa-brands fa-css3-alt icone_skill_usada"></i></div>
+                        <div class="skill_usada"></div>
+                        <div class="skill_usada"></div>
+                    </div>
+                </div>
+                <div class="projeto"></div>
+        </section>
     </section>
+
+
 
 
     <footer class="footer" id="rodape_contato">

@@ -5,6 +5,7 @@
         /*Roxo claro*/
         --roxo_claro: #5334ae;
         --azul_claro: #1770b3;
+        --azul_escuro: #1e2d4e;
     }
 
     *{
@@ -15,83 +16,105 @@
     /* background: linear-gradient(to right, #5334ae, #1770b3);*/
     /*background: linear-gradient(180deg,rgba(83, 52, 174, 1) 17%, rgba(23, 112, 179, 1) 61%);*/
     background: linear-gradient(90deg, #2d3eff 0%, #2d3eff 40%, #a033ff 70%, #cc44ff 100%);
-
-
         color: white;
         height: 100vh;
     }
+  /* HEADER PRINCIPAL */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10%;
+            height: 80px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2); /* sombra suave */
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-    header{
-        display: flex;
-        height: 10vh;
-    }
-    header {
-        display: flex;
-        justify-content: center; /* Garante espaço entre logo e menu */
-        align-items: center;
-        padding: 20px;
-    }
+        /* ESQUERDA */
+        .header-esquerda {
+            font-size: 26px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
 
-    header ul {
-        display: flex;
-        flex-direction: row;
-        /*margin-left: auto; /* Move a UL para a direita */
-        text-align: center;
-        padding: 20px;
-        font-size: 18px;
-        font-family: "Questrial", sans-serif;
-        margin: auto;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        
+        /* MENU CENTRAL */
+        .menu-centro {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .menu-centro li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .menu-centro li a:hover {
+            color: #ad6be3;
+            transform: scale(1.1); /* efeito de leve zoom */
+        }
+
+        /* DIREITA */
+        .header-direita {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* ÍCONES DE REDES SOCIAIS */
+        .icones_redes_sociais {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        .icone_social {
+            font-size: 30px;
+            cursor: pointer;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .icone_social:hover {
+            color: #ad6be3;
+            transform: scale(1.2);
+        }
 
 
-    }
-
+    /* remove a margin-left dos <li> para não atrapalhar o flex */
     header ul li {
-        display: inline-block;
-        margin-right: 110px;
-        text-transform: uppercase;
         font-weight: bold;
-        text-decoration: underline;
-    }
-
-    header ul li:hover{
         font-size: 20px;
+        cursor: pointer;
+        margin-left: 0;
     }
 
-    header > span{
-        font-size: 40px;
-        padding: 15px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-left: 5%;
-        font-family: "League Spartan", sans-serif;
-        font-weight: bold;
-
+    header ul li:hover {
+        color: #ad6be3;
+        transition: 0.3s;
     }
 
-    header > span:last-child {
-    margin-right: 60px; /* Aumenta a distância da borda direita */
-    }
+
+/* Ícones sociais no header */
     .icones_redes_sociais {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    list-style: none;
-    gap: 10px; /* diminua esse valor para deixar mais próximos */
+        display: flex;
+        gap: 15px;
     }
-    .icones_redes_sociais > ul {
-        margin-right: 100px ;
-    }
+
     .icones_redes_sociais li {
-    margin: 10px;
-    padding: 0;
-    font-size: 30px;
-    margin-top: 20%;
+        list-style: none;
+        font-size: 24px;
+        margin: 0;
     }
+
 
     .icones_redes_sociais li:hover{
         font-size: 30px;
@@ -99,15 +122,20 @@
 
     .secao_principal{
         width: 80%;
-        height: auto;
+        height: 70%;
         margin: auto;
-        margin-top: 5%;
         padding: 2%;
-        display: flex
+        display: flex;
+
     }
     #secao_apresentacao, #secao_imagem_principal{
         width: 50%;
     }
+      #secao_apresentacao{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
     @keyframes fadeIn {
         to{
             opacity: 1;
@@ -141,11 +169,13 @@
         }
     }
     h2{
-        font-size: 30px;
+        font-size: 45px;
         font-family: "League Spartan", sans-serif;
         animation: fadeIn 2s ease-in-out forwards;
         opacity: 0;
         animation-delay: 1s;
+        padding: 20px;
+        width: auto;
 
 
 
@@ -206,10 +236,19 @@
         align-items: center; 
     }
 
-    #secao_imagem_principal > img {
-        width: 85%;
-        margin-top: -14%;
-    }
+  #secao_imagem_principal {
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center;     /* vertical (se tiver altura) */
+}
+
+.animacao_lottie {
+    width: 800px;
+    height: 800px;
+    max-width: 100%;
+}
+
+
     /*SECAO SOBRE MIM*/
 
     #sobre_mim{
@@ -481,43 +520,157 @@
         align-items: center;
         gap: 2rem; /* espaçamento entre os elementos */
         border: 1px solid black ;
-        background-color: black;
-        background-image: url(images/fundoazulprogramacao.jpg );
-        background-size: cover;
+        background-color: white;
+        /*background-image: url(images/fundoazulprogramacao.jpg );
+        background-size: cover;*/
     
 
     }
-    #projetos{
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        align-items: center;
-        width: 90%;
-        height: 95%;
 
-    }
-    .col_projeto{
-        flex: 1;
-        width:250px;
-    }
-    .card_projeto{
-        border-radius: 20px;
-        margin-top: 8%;
-        height: 85%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column; /* muda de coluna para linha */
-        border: 3px solid rgb(180, 180, 180); 
-        background: linear-gradient(355deg, rgba(83, 52, 174, 0.18) 21%, rgba(20, 107, 227, 0.18) 56%);
-        border-radius: 16px;
+       #secao_projetosdesenvolvidos{
+        width: 100% !important;
+       }
+   #projetos {
+     display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas fixas */
+    gap: 30px; /* espaço entre os cards */
+    padding: 40px;
+    border: 1px solid black;
+}
+
+.col_projeto {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* centraliza o card dentro da coluna */
+}
+
+.card_projeto {
+    border-radius: 16px;
+    width: 100%;
+    max-width: 400px; /* limita o tamanho do card */
+    height: 70%;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        355deg,
+        rgba(83, 52, 174, 0.12) 21%,
+        rgba(20, 107, 227, 0.12) 56%
+    );
+
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+}
+
+
+    /*Nova seção de projetos*/ 
+
+      .projetos_desenvolvidos{
+        width: 100%;
+        height: auto;
         padding: 20px;
-        border: 1px solid rgba(83, 52, 174, 0.25); /* contorno um pouco mais visível */
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-        transition: transform 0.2s ease;
-        border: 2px solid white;
-
+       /* border: 1px solid black;*/
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
     }
+
+    #cards_projetos{
+        display: grid;
+        grid-template-columns: repeat(3, 380px);
+        column-gap: 50px; /* Apenas colunas */
+        row-gap: 50px;
+        /*border: 1px solid black;*/
+    }
+
+ .projetos_desenvolvidos {
+    width: 100%;
+    min-height: 50vh;
+    padding: 20px;
+    background-color: #fff;
+    box-sizing: border-box;
+    
+}
+
+#cards_projetos {
+    display: grid;
+    grid-template-columns: repeat(3, 420px); /* 3 colunas fixas */
+    gap: 25px;
+    justify-content: center; /* centraliza o grid no container */
+    padding: 10px 0;
+}
+
+.projeto {
+    background: transparent; /* fundo escuro */
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* borda sutil */
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.7),  /* sombra externa escura */
+        inset 0 0 15px rgba(255, 255, 255, 0.05); /* sombra interna leve */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    height: auto;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+    color: #e0e0e0;
+    max-width: 420px;
+}
+
+.projeto:hover {
+    transform: translateY(-10px);
+    border-color: #3a63ff;
+}
+
+.projeto > img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease;
+}
+
+
+
+.projeto > label {
+    width: 100%;
+    text-align: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    user-select: none;
+    padding: 10px 0 0 0;
+    line-height: 1.4;
+}
+
+.skills_utilizadas{
+    display: flex;
+    grid-template-columns: repeat(5, 1fr);
+    float: left;
+    width: 100%;
+    padding: 20px;
+    gap: 10px
+    
+}
+.icone_skill_usada{
+    font-size: 35px;
+    fill: black;
+    color: black;
+}
+
+
+
     .card_projeto:hover{
         transform: scale(1.1);
     }
