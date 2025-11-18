@@ -24,18 +24,13 @@
         <span>Soraia Siquelli</span>
     </div>
 
-    <ul class="menu-centro">
-        <li><a href="#sobre_mim">Sobre mim</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#secaoprojetos">Projetos</a></li>
-        <li><a href="#rodape_contato">Contate-me</a></li>
-    </ul>
-
     <div class="header-direita">
-        <!--<ul class="icones_redes_sociais">
-        <li><a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin icone_social"></i></a></li>
-        <li><a href="https://github.com" target="_blank"><i class="fa-brands fa-github icone_social"></i></a></li>
-        </ul>-->
+        <ul class="menu-centro">
+            <li><a href="#sobre_mim">Sobre mim</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#secaoprojetos">Projetos</a></li>
+            <li><a href="#rodape_contato">Contate-me</a></li>
+        </ul>
     </div>
     </header>
 
@@ -92,9 +87,9 @@
 
     <section class="secoes_pretas">
         <section id="sobre_mim" >
-            <header>
+            <section>
                 <h2>Um pouco sobre mim</h2>
-            </header>
+            </section>
             <div id="secao_resumo">
                 <div class="col_sobre">
                     <div class="bloco_sobre">
@@ -177,53 +172,63 @@
 
 
 <section class="projetos_desenvolvidos" id="secaoprojetos">
+  <div class="projetos_header">
+    <h2>Meus Projetos</h2>
+    <div class="filtros_projetos">
+      <button class="filtro_btn active" data-filter="all">Web Application</button>
+    </div>
+  </div>
+
   <div class="cards_container">
 
     <!-- Card 1 -->
-    <div class="card">
+    <div class="card" data-category="web">
       <div class="card_image">
-        <img src="images/speedorder.png" alt="Dev Tasks Project">
+        <img src="images/speedorder.png" alt="SpeedOrder Project">
+        <div class="badge_lancamento">Em Lançamento</div>
       </div>
       <div class="card_content">
-        <div class="card_title">SpeedOrder</div>
-        <div class="card_subtitle">Sistema de Pedidos em Tempo Real</div>
-        <div class="card_links">
-        </div>
-        <div class="card_description">
-          Um app web de pedidos em tempo real para restaurantes.
-        </div>
+        <h3 class="card_title">SpeedOrder</h3>
+        <p class="card_description">
+         Sistema web criado para otimizar o atendimento em pizzarias e hamburguerias. Permite que garçons registrem pedidos pelo celular e enviem em tempo real para a cozinha.
+        </p>
       </div>
     </div>
 
     <!-- Card 2 -->
-    <div class="card">
+    <div class="card" data-category="web">
       <div class="card_image">
-        <img src="images/timebooker.png" alt="E-commerce Project">
+        <img src="images/timebooker.png" alt="TimeBooker Project">
       </div>
       <div class="card_content">
-        <div class="card_title">Time Booker</div>
-        <div class="card_subtitle">Sistema de Agendamento</div>
-        <div class="card_links">
-        </div>
-        <div class="card_description">
-         Sistema de agendamento para salões de beleza, dentista entre outros.
-        </div>
+        <h3 class="card_title">Time Booker</h3>
+        <p class="card_description">
+        Plataforma web desenvolvida para que empresas possam gerenciar suas agendas e permitir que clientes agendem horários de forma prática e online.        </p>
       </div>
     </div>
 
     <!-- Card 3 -->
-    <div class="card">
+    <div class="card" data-category="web">
       <div class="card_image">
-        <img src="images/osav.png" alt="Portfolio Project">
+        <img src="images/osav.png" alt="OSAV Project">
       </div>
       <div class="card_content">
-        <div class="card_title">OSAV</div>
-        <div class="card_subtitle">Projeto Acadêmico</div>
-        <div class="card_links">
-        </div>
-        <div class="card_description">
-          Empresa fictícia de prestação de serviços como desenvolvimento web e mobile.
-        </div>
+        <h3 class="card_title">OSAV</h3>
+        <p class="card_description">
+         Landing page acadêmica criada para apresentar os serviços de desenvolvimento de sites oferecidos pelo projeto OSAV. A página destaca benefícios, funcionalidades e CTA para contato.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 4 - Novo Projeto -->
+    <div class="card" data-category="web">
+      <div class="card_image">
+        <img src="images/cloudcar.png" alt="Novo Projeto">
+      </div>
+      <div class="card_content">
+        <h3 class="card_title">CloudCar</h3>
+        <p class="card_description">
+      Projeto acadêmico de um site para concessionária, permitindo que usuários simulem financiamento e agendem test drives de forma prática.        </p>
       </div>
     </div>
 

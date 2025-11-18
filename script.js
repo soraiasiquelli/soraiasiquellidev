@@ -7,7 +7,7 @@ var imagemProjetoTimeBooker = document.getElementById("imagemProjetoTimeBooker")
 
 
 Array.from(btnVerMais).forEach((btn) => {
-    
+
     btn.addEventListener("click", () => {
 
         //pega o elemento mais proximo
@@ -16,7 +16,7 @@ Array.from(btnVerMais).forEach((btn) => {
         const dataDescricao = btn.dataset.descricao
 
         let descProjeto = card.querySelector(".desc_projeto");
-        
+
 
         //Se não existir ainda vai criar o paragrafo
         if(!descProjeto){
@@ -39,12 +39,48 @@ Array.from(btnVerMais).forEach((btn) => {
             }
         }
 
-       
 
+
+
+})
 
 })
 
-})
+
+// Funcionalidade dos filtros de projetos
+document.addEventListener('DOMContentLoaded', () => {
+    const filtros = document.querySelectorAll('.filtro_btn');
+    const cards = document.querySelectorAll('.card');
+
+    filtros.forEach(filtro => {
+        filtro.addEventListener('click', () => {
+            // Remove a classe active de todos os botões
+            filtros.forEach(btn => btn.classList.remove('active'));
+
+            // Adiciona a classe active ao botão clicado
+            filtro.classList.add('active');
+
+            // Pega o filtro selecionado
+            const filterValue = filtro.getAttribute('data-filter');
+
+            // Filtra os cards
+            cards.forEach(card => {
+                if (filterValue === 'all') {
+                    card.classList.remove('hidden');
+                    card.style.animation = 'fadeIn 0.5s ease';
+                } else {
+                    const category = card.getAttribute('data-category');
+                    if (category === filterValue) {
+                        card.classList.remove('hidden');
+                        card.style.animation = 'fadeIn 0.5s ease';
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    });
+});
 
 
 

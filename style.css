@@ -10,7 +10,19 @@
 
     *{
         padding: 0px;
-        margin: 0%
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+    }
+
+    body {
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
     }
     main{
     /* background: linear-gradient(to right, #5334ae, #1770b3);*/
@@ -24,40 +36,81 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 10%;
-            height: 80px;
+            padding: 20px 8%;
+            height: auto;
             color: #fff;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: sticky;
+            top: 0;
+            background: rgba(45, 51, 255, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
 
         /* ESQUERDA */
         .header-esquerda {
-            font-size: 26px;
-            font-weight: bold;
-            letter-spacing: 1px;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            font-family: "League Spartan", sans-serif;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .header-esquerda:hover {
+            transform: scale(1.05);
+            letter-spacing: 2px;
+            color: #cc44ff;
         }
 
         /* MENU CENTRAL */
         .menu-centro {
             display: flex;
-            gap: 40px;
+            gap: 50px;
             list-style: none;
             justify-content: center;
             align-items: center;
             padding: 0;
             margin: 0;
-            font-size: 20px;
+            font-size: 18px;
+        }
+
+        .menu-centro li {
+            position: relative;
         }
 
         .menu-centro li a {
             color: #fff;
             text-decoration: none;
-            transition: color 0.3s, transform 0.3s;
+            font-weight: 500;
+            font-family: "Questrial", sans-serif;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .menu-centro li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #cc44ff 0%, #a033ff 100%);
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
         }
 
         .menu-centro li a:hover {
-            color: #ad6be3;
-            transform: scale(1.1); /* efeito de leve zoom */
+            color: #cc44ff;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .menu-centro li a:hover::after {
+            width: 80%;
         }
 
         /* DIREITA */
@@ -77,27 +130,38 @@
         }
 
         .icone_social {
-            font-size: 30px;
+            font-size: 24px;
             cursor: pointer;
-            transition: color 0.3s, transform 0.3s;
+            transition: all 0.3s ease;
+            color: white;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid transparent;
         }
 
         .icone_social:hover {
-            color: #ad6be3;
-            transform: scale(1.2);
+            background: linear-gradient(135deg, #cc44ff 0%, #a033ff 100%);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(204, 68, 255, 0.4);
         }
 
 
     /* remove a margin-left dos <li> para não atrapalhar o flex */
     header ul li {
-        font-weight: bold;
-        font-size: 20px;
+        font-weight: 500;
+        font-size: 18px;
         cursor: pointer;
         margin-left: 0;
     }
 
     header ul li:hover {
-        color: #ad6be3;
+        color: #cc44ff;
         transition: 0.3s;
     }
 
@@ -110,13 +174,46 @@
 
     .icones_redes_sociais li {
         list-style: none;
-        font-size: 24px;
         margin: 0;
     }
 
+    /* Responsividade do header */
+    @media (max-width: 968px) {
+        header {
+            padding: 15px 5%;
+        }
 
-    .icones_redes_sociais li:hover{
-        font-size: 30px;
+        .menu-centro {
+            gap: 30px;
+            font-size: 16px;
+        }
+
+        .header-esquerda {
+            font-size: 24px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        header {
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px 5%;
+        }
+
+        .menu-centro {
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .header-esquerda {
+            font-size: 22px;
+        }
+
+        .icone_social {
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+        }
     }
 
     .secao_principal{
@@ -141,7 +238,7 @@
         }
     }
     h1{
-        font-size: 60px;
+        font-size: clamp(24px, 5vw, 60px);
         font-family: "League Spartan", sans-serif;
         /*forwards serve para não voltar ao estado inicia,l, ou seja, nesse caso o opacity 0*/
         /*animation: fadeIn 2s ease-in-out forwards;*/
@@ -168,7 +265,7 @@
         }
     }
     h2{
-        font-size: 45px;
+        font-size: clamp(22px, 4vw, 45px);
         font-family: "League Spartan", sans-serif;
         animation: fadeIn 2s ease-in-out forwards;
         opacity: 0;
@@ -180,7 +277,7 @@
 
     }
     h3{
-        font-size: 24px;
+        font-size: clamp(16px, 2.5vw, 24px);
         font-family: "League Spartan", sans-serif;
         animation: fadeIn 2s ease-in-out forwards;
         opacity: 0;
@@ -207,6 +304,7 @@
 
     .card_apresentacao {
         width: 100px;
+        max-width: 100%;
         height:auto;
         background-color: white;
         color: black;
@@ -245,10 +343,15 @@
     width: 800px;
     height: 800px;
     max-width: 100%;
+    max-height: 800px;
 }
 
 
     /*SECAO SOBRE MIM*/
+
+    .secoes_pretas{
+        background: linear-gradient(90deg, #2d3eff 0%, #2d3eff 40%, #a033ff 70%, #cc44ff 100%);
+    }
 
     #sobre_mim{
         width: 80%;
@@ -257,12 +360,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        
+
 
     }
-    #sobre_mim>header>h2{
+    #sobre_mim>section>h2{
         font-size: 50px;
-        color: black;
+        color: white;
     }
     #secao_resumo{
         display: flex;
@@ -272,10 +375,6 @@
         width: 80%;
         height: 60%;
         justify-content: space-between;
-        background: #5334AE;
-        background: linear-gradient(355deg, rgba(83, 52, 174, 1) 21%, rgba(20, 107, 227, 1) 56%);
-        border-radius: 20px;
-        border: 3px solid white;
 
     }
     .col_sobre{
@@ -402,7 +501,7 @@
 
     #secao_skills {
         height: 100vh;
-        background: linear-gradient(to right, #5334ae, #1770b3);
+        background: linear-gradient(90deg, #2d3eff 0%, #2d3eff 40%, #a033ff 70%, #cc44ff 100%);
         display: flex;
         flex-direction: row; /* muda de coluna para linha */
         justify-content: center;
@@ -511,108 +610,264 @@
     }*/
     /*Secao projetos*/
 
-    #secao_projetosdesenvolvidos, .secoes_pretas{
+    #secao_projetosdesenvolvidos{
         height: 100vh;
         display: flex;
         flex-direction: row; /* muda de coluna para linha */
         justify-content: center;
         align-items: center;
         gap: 2rem; /* espaçamento entre os elementos */
-        border: 1px solid black ;
-        background-color: white;
-        /*background-image: url(images/fundoazulprogramacao.jpg );
-        background-size: cover;*/
-    
+        background: linear-gradient(90deg, #2d3eff 0%, #2d3eff 40%, #a033ff 70%, #cc44ff 100%);
+
 
     }
 
 
 
-    /*Nova seção de projetos*/ 
+    /*Nova seção de projetos*/
 
-    .projetos_desenvolvidos{
+    .projetos_desenvolvidos {
         width: 100%;
-        height: auto;
-        padding: 20px;
-        /* border: 1px solid black;*/
-        background-color: white;
+        min-height: 100vh;
+        padding: 80px 20px;
+        background: linear-gradient(90deg, #2d3eff 0%, #2d3eff 40%, #a033ff 70%, #cc44ff 100%);
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-            
+        box-sizing: border-box;
+        overflow-x: hidden;
     }
-    /*nova secao*/
 
+    .projetos_header {
+        text-align: center;
+        margin-bottom: 60px;
+        width: 100%;
+        max-width: 1400px;
+    }
+
+    .projetos_header h2 {
+        font-size: 60px;
+        font-family: "League Spartan", sans-serif;
+        color: white;
+        margin-bottom: 40px;
+        font-weight: 700;
+    }
+
+    .filtros_projetos {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 0 10px;
+    }
+
+    .filtro_btn {
+        padding: 12px 30px;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        border-radius: 50px;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        font-size: 16px;
+        font-family: "Questrial", sans-serif;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+    }
+
+    .filtro_btn:hover {
+        background: rgba(173, 107, 227, 0.3);
+        border-color: #ad6be3;
+        transform: translateY(-2px);
+    }
+
+    .filtro_btn.active {
+        background: linear-gradient(90deg, #cc44ff 0%, #a033ff 100%);
+        border-color: #cc44ff;
+        box-shadow: 0 0 20px rgba(204, 68, 255, 0.5);
+    }
 
     .cards_container {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 30px;
+        gap: 40px;
+        max-width: 1400px;
+        width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
     }
 
     .card {
-        border-radius: 10px;
-        width: 360px;
-        height: 400px;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 380px;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
         overflow: hidden;
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.02);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         display: flex;
         flex-direction: column;
+        transition: all 0.3s ease;
+        box-sizing: border-box;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 40px rgba(173, 107, 227, 0.4);
+        border-color: rgba(173, 107, 227, 0.5);
     }
 
     .card_image {
-        height: 250px;
+        height: 240px;
         overflow: hidden;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
+        background: rgba(0, 0, 0, 0.2);
+        position: relative;
+    }
+
+    .badge_lancamento {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: linear-gradient(135deg, #ff6b6b 0%, #ff4757 100%);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+        font-family: "Questrial", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+        z-index: 10;
+        animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% {
+            transform: scale(1);
+            box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+        }
+        50% {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 71, 87, 0.6);
+        }
     }
 
     .card_image img {
         width: 100%;
         height: 100%;
-        object-fit: contain; /* Mostra imagem inteira */
+        object-fit: cover;
         display: block;
+        transition: transform 0.3s ease;
+    }
+
+    .card:hover .card_image img {
+        transform: scale(1.1);
     }
 
     .card_content {
-        padding: 15px;
+        padding: 25px;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        gap: 15px;
         flex: 1;
     }
 
     .card_title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 4px;
-    }
-
-    .card_subtitle {
-    font-size: 14px;
-    color: black;
-    margin-bottom: 10px;
-    }
-
-    .card_links {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    margin-bottom: 10px;
-    }
-
-    .card_links a {
-    color: #888;
-    text-decoration: none;
-    font-size: 18px;
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+        font-family: "League Spartan", sans-serif;
+        margin: 0;
     }
 
     .card_description {
-    font-size: 14px;
-    color: black;
-    line-height: 1.4;
-    text-align: left;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.6;
+        font-family: "Questrial", sans-serif;
+        flex: 1;
+    }
+
+    .card_buttons {
+        display: flex;
+        gap: 12px;
+        margin-top: 10px;
+    }
+
+    .btn_repository,
+    .btn_demo {
+        flex: 1;
+        padding: 12px 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-size: 14px;
+        font-family: "Questrial", sans-serif;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .btn_repository {
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        color: white;
+    }
+
+    .btn_repository:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: white;
+    }
+
+    .btn_demo {
+        background: linear-gradient(90deg, #cc44ff 0%, #a033ff 100%);
+        border: 2px solid transparent;
+        color: white;
+    }
+
+    .btn_demo:hover {
+        background: linear-gradient(90deg, #d966ff 0%, #b855ff 100%);
+        box-shadow: 0 0 20px rgba(204, 68, 255, 0.5);
+        transform: translateY(-2px);
+    }
+
+    .card.hidden {
+        display: none;
+    }
+
+    /* Media Queries para responsividade */
+    @media (max-width: 768px) {
+        .projetos_header h2 {
+            font-size: 40px;
+        }
+
+        .card {
+            max-width: 100%;
+        }
+
+        .filtro_btn {
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .projetos_desenvolvidos {
+            padding: 40px 15px;
+        }
+
+        .projetos_header h2 {
+            font-size: 32px;
+        }
+
+        .cards_container {
+            gap: 20px;
+        }
     }
     /*footer*/
     
