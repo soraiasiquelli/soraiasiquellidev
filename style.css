@@ -222,8 +222,40 @@
         margin: auto;
         padding: 2%;
         display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
 
     }
+    .secao_principal > h2{
+        font-size: 90px;
+    }
+    .secao_principal > h2 {
+        font-size: 80px;
+    /*background: linear-gradient(
+        90deg,
+        #a033ff 0%,
+        #cc44ff 30%,
+        #cc44ff 70%,
+        #a033ff 100%
+    );*/
+    color: white;
+    }
+    .secao_principal > h3{
+    font-weight: 200;
+
+    
+    }
+
+    .bloco_secao_principal{
+        border: none;
+        border-bottom: 1px solid rgba(231, 230, 230, 0.363);
+        border-top: 1px solid  rgba(231, 230, 230, 0.363);
+        width: 70%;
+        padding: 2%;
+        text-align: center;
+    }
+    
     #secao_apresentacao, #secao_imagem_principal{
         width: 50%;
     }
