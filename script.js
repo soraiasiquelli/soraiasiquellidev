@@ -1,9 +1,34 @@
 //Definição variaveis
 
+
 var btnVerMais = document.getElementsByClassName("btnVerMais")
 var card_projeto = document.getElementById("card_projeto")
+var divSkill = document.getElementById("skillPython")
+var divDescSkills = document.querySelector(".descricao-tecnologias")
+
+var boxSkills = document.querySelectorAll(".skill")
+
+boxSkills.forEach(box => {
+    box.addEventListener("mouseover", ()=> {
+
+    divDescSkills.innerHTML = ""
+    
+    var descSkill = document.createElement("p")
+    descSkill.innerText = box.dataset.msg
+    descSkill.classList.add("descSkill")
+
+
+    divDescSkills.appendChild(descSkill)
+})
+})
+
+
 
 var imagemProjetoTimeBooker = document.getElementById("imagemProjetoTimeBooker")
+
+
+
+
 
 
 Array.from(btnVerMais).forEach((btn) => {

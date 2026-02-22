@@ -1,13 +1,15 @@
 /* ============================================
-   RESPONSIVIDADE MOBILE-FIRST
+   RESPONSIVIDADE MOBILE-FIRST - ATUALIZADO
    ============================================
 
    RESUMO DAS MUDANÇAS NO MOBILE:
    - Imagem da animação aparece ACIMA do nome (ordem invertida)
    - Cards brancos da apresentação ficam OCULTOS
-   - Blocos brancos da seção "Sobre Mim" ficam OCULTOS
-   - Card resumido e moderno substitui os blocos no mobile
+   - Blocos da seção "Sobre Mim" se adaptam para coluna única
    - Layout otimizado para leitura vertical
+   - Hero section totalmente responsiva
+   - Skills em grid mobile-friendly
+   - Projetos com cards em coluna única
 
    ============================================ */
 
@@ -27,6 +29,29 @@
 
     .header-esquerda {
         font-size: 24px;
+    }
+
+    /* Hero Section */
+    .conteudo_principal {
+        gap: 18px;
+        padding: 15px 0;
+    }
+
+    .nome_principal {
+        font-size: clamp(42px, 7vw, 80px);
+    }
+
+    .stats_hero {
+        gap: 20px;
+    }
+
+    .stat_item {
+        padding: 12px 20px;
+    }
+
+    .cta_buttons {
+        flex-direction: row;
+        gap: 12px;
     }
 
     /* Seção Principal */
@@ -74,48 +99,53 @@
 
     /* Sobre Mim */
     #sobre_mim {
-        width: 90%;
-        height: auto;
-        padding: 60px 0;
-        flex-direction: column;
+        padding: 60px 5%;
+        gap: 35px;
     }
 
     #sobre_mim > section > h2 {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
+        font-size: clamp(38px, 5.5vw, 55px);
     }
 
     #secao_resumo {
         flex-direction: column;
-        width: 100%;
-        height: auto;
+        gap: 1.5rem;
     }
 
     .col_sobre {
+        min-width: 100%;
         width: 100%;
-        height: auto;
     }
 
     .bloco_sobre {
-        margin-bottom: 20px;
+        min-height: 180px;
+        padding: 25px;
     }
 
     /* Skills */
     #secao_skills {
-        height: auto;
         flex-direction: column;
+        gap: 2rem;
         padding: 60px 20px;
     }
 
     #skills {
-        width: 80%;
-        height: auto;
-        gap: 1rem;
+        width: 90%;
+        max-width: 500px;
     }
 
     .img_skills {
         width: 90%;
-        height: auto;
-        margin-top: 40px;
+        max-width: 500px;
+    }
+
+    .skill {
+        height: 110px;
+    }
+
+    .icone_skill {
+        font-size: 60px;
     }
 
     /* Projetos */
@@ -171,13 +201,70 @@
         min-height: 100vh;
     }
 
-    /* Seção Principal */
+    /* Hero Section */
     .secao_principal {
-        width: 95%;
-        padding: 20px 10px;
-        flex-direction: column-reverse !important;
+        padding: 40px 4%;
+        min-height: auto;
     }
 
+    .conteudo_principal {
+        gap: 12px;
+        padding: 10px 0;
+    }
+
+    .badge_status {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    .nome_principal {
+        font-size: clamp(36px, 8vw, 70px);
+    }
+
+    .bloco_secao_principal h3 {
+        font-size: clamp(18px, 2.5vw, 28px);
+    }
+
+    .descricao_hero {
+        font-size: clamp(13px, 1.3vw, 16px);
+    }
+
+    .stats_hero {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .stat_item {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 20px;
+    }
+
+    .cta_buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .btn_primary,
+    .btn_secondary {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 30px;
+    }
+
+    .social_links_hero {
+        gap: 12px;
+    }
+
+    .social_link {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+
+    /* Seção Principal antiga */
     #secao_imagem_principal {
         margin-bottom: 30px;
     }
@@ -223,84 +310,63 @@
 
     /* Sobre Mim */
     #sobre_mim {
-        padding: 50px 20px;
-        flex-direction: column;
-        height: auto !important;
-        min-height: auto !important;
-    }
-
-    #sobre_mim > section {
-        width: 100%;
-        margin-bottom: 30px;
+        padding: 50px 4%;
+        gap: 30px;
     }
 
     #sobre_mim > section > h2 {
-        font-size: 36px;
-        text-align: center;
-        margin-bottom: 20px;
+        font-size: clamp(32px, 5vw, 40px);
+        margin-bottom: 15px;
     }
 
     #secao_resumo {
         flex-direction: column;
-        gap: 0;
+        gap: 1.2rem;
     }
 
     .col_sobre {
+        min-width: 100%;
         padding: 0;
     }
 
     .bloco_sobre {
-        display: none !important;
+        padding: 25px;
+        min-height: 180px;
     }
 
-    /* Novo estilo mobile para sobre mim */
-    #sobre_mim::after {
-        content: '🎓 Formada em Desenvolvimento de Sistemas pelo SENAI e atualmente cursando Ciência da Computação na USCS (4º Semestre).\A\A💼 Estágio no Santander Brasil desde setembro/2024, atuando com PowerPlataform, Excel, SQL e Python.\A\A💻 Experiência em desenvolvimento web, banco de dados e otimização para SEO.';
-        white-space: pre-line;
-        display: block;
-        width: 100%;
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 30px 25px;
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
-        backdrop-filter: blur(15px);
-        border-radius: 25px;
-        border: 2px solid rgba(255, 255, 255, 0.2);
-        color: white;
-        font-family: "Questrial", sans-serif;
-        font-size: 16px;
-        line-height: 1.9;
-        text-align: left;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    .bloco_sobre > h3 {
+        font-size: 20px;
+    }
+
+    .bloco_sobre > p {
+        font-size: 14px;
     }
 
     /* Skills */
     #secao_skills {
         padding: 40px 15px;
+        flex-direction: column;
     }
 
     #skills {
         width: 100%;
-        flex-direction: column;
-        gap: 0;
+        gap: 1rem;
+        flex-direction: row;
     }
 
     .col_skill {
         width: 100%;
-        padding: 10px;
+        padding: 8px;
+        gap: 15px;
     }
 
     .skill {
         height: 100px;
-        margin-bottom: 10px;
+        margin-bottom: 0;
     }
 
     .icone_skill {
-        font-size: 60px;
-    }
-
-    .icone_skill:hover {
-        font-size: 60px;
+        font-size: 50px;
     }
 
     .img_skills {
@@ -309,16 +375,12 @@
     }
 
     #tecnologias {
-        padding: 40px 15px;
+        padding: 30px 20px;
+        min-height: 180px;
     }
 
-    .descricao-tecnologias {
-        padding-left: 15px;
-    }
-
-    .descricao-tecnologias li {
-        font-size: 0.95rem;
-        margin-bottom: 15px;
+    .descSkill {
+        font-size: 18px;
     }
 
     /* Projetos */
@@ -422,11 +484,66 @@
         font-size: 13px;
     }
 
-    /* Seção Principal */
+    /* Hero Section */
     .secao_principal {
-        flex-direction: column-reverse !important;
+        padding: 30px 4%;
     }
 
+    .conteudo_principal {
+        gap: 10px;
+    }
+
+    .badge_status {
+        font-size: 11px;
+        padding: 7px 14px;
+    }
+
+    .nome_principal {
+        font-size: clamp(28px, 9vw, 60px);
+        letter-spacing: -0.5px;
+    }
+
+    .bloco_secao_principal h3 {
+        font-size: clamp(16px, 2.2vw, 24px);
+    }
+
+    .descricao_hero {
+        font-size: clamp(12px, 1.2vw, 15px);
+    }
+
+    .stats_hero {
+        gap: 8px;
+    }
+
+    .stat_item {
+        padding: 10px 18px;
+    }
+
+    .stat_item i {
+        font-size: 24px;
+    }
+
+    .stat_numero {
+        font-size: 18px;
+    }
+
+    .stat_label {
+        font-size: 11px;
+    }
+
+    .btn_primary,
+    .btn_secondary {
+        padding: 12px 28px;
+        font-size: 15px;
+    }
+
+    .social_link {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+
+    /* Seção Principal antiga */
     #secao_imagem_principal {
         margin-bottom: 20px;
     }
@@ -455,23 +572,42 @@
 
     /* Sobre Mim */
     #sobre_mim {
-        padding: 40px 15px;
+        padding: 40px 4%;
+        gap: 25px;
     }
 
     #sobre_mim > section > h2 {
-        font-size: 28px;
-        margin-bottom: 15px;
+        font-size: clamp(26px, 4.5vw, 34px);
     }
 
-    #sobre_mim::after {
-        font-size: 15px;
-        padding: 25px 20px;
-        line-height: 1.8;
+    .bloco_sobre {
+        padding: 20px;
+        min-height: 160px;
+    }
+
+    .bloco_sobre > h3 {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    .bloco_sobre > p {
+        font-size: 13px;
+        line-height: 1.6;
     }
 
     /* Skills */
     #secao_skills {
-        padding: 30px 10px;
+        padding: 40px 15px;
+    }
+
+    #skills {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .col_skill {
+        padding: 6px;
+        gap: 12px;
     }
 
     .skill {
@@ -479,28 +615,16 @@
     }
 
     .icone_skill {
-        font-size: 50px;
-    }
-
-    .icone_skill:hover {
-        font-size: 50px;
+        font-size: 45px;
     }
 
     #tecnologias {
-        padding: 30px 10px;
+        padding: 25px 18px;
+        min-height: 160px;
     }
 
-    #tecnologias h2 {
-        font-size: 1.8rem;
-    }
-
-    .descricao-tecnologias {
-        padding-left: 10px;
-    }
-
-    .descricao-tecnologias li {
-        font-size: 0.9rem;
-        margin-bottom: 12px;
+    .descSkill {
+        font-size: 16px;
     }
 
     /* Projetos */
